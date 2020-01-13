@@ -1,4 +1,4 @@
-// --------------------      exercice 1
+// --------------------      Exercice 1 https://projecteuler.net/problem=1
 // let result = 0
 
 
