@@ -1,4 +1,5 @@
 // Exercice 6
+// https://projecteuler.net/problem=6
 // The sum of the squares of the first ten natural numbers is,
 // 1e2 + 2e2 +...+ 10e2 = 385
 // The square of the sum of the first ten natural numbers is,
