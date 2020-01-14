@@ -23,4 +23,5 @@ for (i=1; i<1000; i++){
         } else{}
     }
 }
+
 console.log("We Have a Champion! " + numPalendrome)
