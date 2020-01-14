@@ -11,7 +11,6 @@ for (i=1; i<1000; i++){
         result += i
     } else if(i%5 == 0){
         result += i
-    } else {
     }
 }
 
