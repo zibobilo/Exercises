@@ -43,6 +43,7 @@ for (let i = 0; i <= (numbersInSample - adjacentNumbers); i++){
                 maxResult = potentialMaxNum;
             }
         }
-    }    
+    }
 }
+
 console.log(`The array ${winnerNums} gives the maximum potential => ${maxResult}`);
