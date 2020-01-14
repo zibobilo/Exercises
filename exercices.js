@@ -1,121 +1,6 @@
-// --------------------      Exercice 1 https://projecteuler.net/problem=1
-// let result = 0
 
 
-// for (i=1; i<1000; i++){
-//     if(i%3 == 0){
-//         result = result + i
-//     } else if(i%5 == 0){
-//         result = result + i
-//     } else {
-//     }
-// }
 
-// console.log(result)
-
-//----------------------------     Exercice 2
-
-
-// let pastResult = 1;
-
-// let result = 2;
-
-// let newResult = 3;
-// let sum = 2;
-// console.log(sum);
-
-
-// while ( newResult < 4000000 ){
-//     newResult = pastResult + result
-//     if(newResult % 2 == 0){
-//         console.log(newResult)
-//         sum += newResult;
-//     } else {}
-//     pastResult = result;
-//     result = newResult;
-// }
-// console.log(sum);
-
-// --------------------------         Exercice 3
-
-// let exercice = 600851475143;
-// for (i=2; i<10000; i++){
-//     if (exercice % i == 0){
-//         exercice = exercice/i;
-//         console.log(i);
-//         console.log(`le reste est de ${exercice}`);
-//     } else{}
-// }
-
-// ---------------------------          Exercice 4
-
-// let number = 1
-
-// function testPalindrome(n){
-// 	n = n + "";
-// 	return n.split("").reverse().join("");
-// }
-
-// let numPalendrome = 1;
-
-// for (i=1; i<1000; i++){
-//     for (j=1; j<1000; j++){
-//         number = i*j;
-//         if (number == testPalindrome(number)){
-//             // console.log(`we made it! ${number}`)
-//             if (numPalendrome < number ){
-//                 numPalendrome = number
-//                 console.log("We Have a Champion!" + numPalendrome)
-//             }
-//         } else{}
-//     }
-// }
-
-// ---------------------------- Exercice 5
-
-
-// for ( let i = 10000000000 ; i > 0 ; i-- ){
-//     if (
-//         i % 11 == 0 &&
-//         i % 12 == 0 &&
-//         i % 13 == 0 &&
-//         i % 14 == 0 &&
-//         i % 15 == 0 &&
-//         i % 16 == 0 &&
-//         i % 17 == 0 &&
-//         i % 18 == 0 &&
-//         i % 19 == 0 &&
-//         i % 20 == 0){
-//             let bestNumber = i
-//             console.log(bestNumber)
-//          }
-// }
-
-// ------------------------------- Exercice 6
-
-
-// let numberOfItterrance = 100;
-
-
-// let resultA = 0;
-
-// for (let i = 1 ; i <= numberOfItterrance ; i++) {
-//     resultA += Math.pow(i, 2);
-//     console.log(resultA);
-// }
-
-// let resultB = 0;
-
-// for (let j = 1 ; j<= numberOfItterrance; j++) {
-//     resultB = resultB + j;
-//     console.log(resultB);
-//     if(j == numberOfItterrance){
-//         resultC = Math.pow(resultB, 2);
-//         console.log("Here is the resultC : " + resultC);
-//     }
-// }
-
-// console.log(`Hello here is the result ${resultC - resultA}`)
 
 
 // --------------------------------- Exercice 7
@@ -137,7 +22,7 @@
 //      }
 //  }
 
-// __________________________________ Kind of cheating on exercice 7
+// __________________________________ enhance exercice 7
 
 // function printPrime(value) {
 //     let primes = [];
@@ -166,45 +51,7 @@
 // }
 // printPrime(110000)
 
-// -------------------------------------- Exercice 9
 
-// let desiredResult = 1000
-// let numA = 0;
-// let numB = 0;
-// let numC = 0;
-// let stressTest1 = false;
-// let stressTest2 = false;
-// let stressTest3 = false;
-
-// for (numA = 1; numA < (desiredResult/2); numA++){
-//     for (numB = 1; numB < (desiredResult/2); numB++){
-//         for (numC = 1; numC < (desiredResult/2); numC++){
-//             stressTest1 = false;
-//             stressTest2 = false;
-//             stressTest3 = false;
-//             aSquare = Math.pow( numA, 2 );
-//             bSquare = Math.pow( numB, 2 );
-//             cSquare = Math.pow( numC, 2 );
-
-//             if((numA + numB + numC) == desiredResult){
-//                 stressTest1 = true;
-//             }
-            
-//             if((aSquare + bSquare) == cSquare){
-//                 stressTest2 = true;
-//             }
-            
-//             if (numA < numB && numA < numC && numB < numC){
-//                 stressTest3 = true;
-//             }
-
-//             if (stressTest1 == true && stressTest2 == true && stressTest3 == true){
-//                 console.log(`First number ${numA}, second number ${numB}, Third number ${numC}`)
-//                 console.log(`the product is ${numA*numB*numC}`)
-//             }
-//         }
-//     }
-// }
 
 // ---------------------------------- Exercice 8
 
@@ -1110,26 +957,6 @@
 // // console.log(possibilities.length)
 
 // console.log(count)
-
-// --------------------------------------------------Exercice 29
-// let number = 0
-// let result = []
-// let uniqueValues = []
-// let limit = 100
-
-// for (a = 2 ; a <= limit ; a++){
-//     for (b = 2 ; b <= limit ; b++){
-//         number = Math.pow(a, b)
-//         result.push(number)
-//         number = 0
-//     }
-// }
-
-// uniqueValues = result.filter(function(item, pos) {
-//     return result.indexOf(item) == pos;
-// })
-// console.log(`the result is : ${uniqueValues.length}`)
-// // console.log(uniqueValues)
 
 // --------------------------------------------------Exercice 32
 

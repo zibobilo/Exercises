@@ -1,4 +1,4 @@
-// --------------------------------------------------Exercice 29
+// Exercice 29
 // https://projecteuler.net/problem=29
 
 // Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
