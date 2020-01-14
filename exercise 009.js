@@ -26,20 +26,14 @@ for (numA = 1; numA < (desiredResult-1); numA++){
 
         if((numA + numB + numC) == desiredResult){
             stressTest1 = true;
+            if((aSquare + bSquare) == cSquare){
+                stressTest2 = true;
+                if (numA < numB && numA < numC && numB < numC){
+                    stressTest3 = true;
+                    console.log(`First number ${numA}, second number ${numB}, Third number ${numC}`)
+                    console.log(`the product is ${numA*numB*numC}`)
+                }
+            }
         }
-        
-        if((aSquare + bSquare) == cSquare){
-            stressTest2 = true;
-        }
-        
-        if (numA < numB && numA < numC && numB < numC){
-            stressTest3 = true;
-        }
-
-        if (stressTest1 == true && stressTest2 == true && stressTest3 == true){
-            console.log(`First number ${numA}, second number ${numB}, Third number ${numC}`)
-            console.log(`the product is ${numA*numB*numC}`)
-        }
-        
     }
 }
