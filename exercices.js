@@ -53,61 +53,10 @@
 
 
 
-// ---------------------------------- Exercice 8
-
-// let sampleNumbers = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450"
-// let numbersInSample = sampleNumbers.length;
-// let adjacentNumbers = 13;
-// let maxResult = 0;
-// let potentialMaxNum = 0;
-// let winnerNums = 0;
-
-// for (let i = 0; i <= (numbersInSample - adjacentNumbers); i++){
-//     let seriesOfNum = [];
-//     for (let k = 0; k <= adjacentNumbers; k++ ){
-//         seriesOfNum.push(sampleNumbers[i + k]);
-//         if (seriesOfNum.length == adjacentNumbers){
-//             potentialMaxNum = seriesOfNum.reduce( (a,b) => a * b );
-//             if (maxResult < potentialMaxNum){
-//                 winnerNums = seriesOfNum;
-//                 maxResult = potentialMaxNum;
-//             }
-//         }
-//     }    
-// }
-// console.log(`The array ${winnerNums} gives the maximum potential => ${maxResult}`);
 
 
-// --------------------------------------- Exercice 10
 
 
-// let primes = [];
-// let count = 1;
-// let stopProcess = 2000000; 
-// let sum = 0;
-
-// for(let i = 2; i < stopProcess; i++) {
-//     primes[i] = true;
-// }
-
-// let limit = Math.sqrt(stopProcess);
-
-
-// for(let i = 2; i < limit; i++) {
-//     if(primes[i] === true) {
-//         for( let j = i * i; j < stopProcess; j += i) { 
-//             primes[j] = false;
-//         }
-//     }
-// }
-
-// for(let i = 2; i < stopProcess; i++) {
-//     if(primes[i] === true) {
-//         count += 1
-//         sum += i
-//     } 
-// }
-// console.log(sum)
 
 
 // ----------------------------------------- Exercice 11
@@ -1017,3 +966,46 @@
 // }
 // lengthOfLongestSubstring("dvdf")
 
+// exercise 19
+//How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+// A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+
+
+let leapMonths = [31,29,31,30,31,30,31,31,30,31,30,31]
+let normalMonths = [31,28,31,30,31,30,31,31,30,31,30,31]
+let months = ["Janvier", "Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre"]
+let days = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"]
+let rest = 0
+let w = 0
+let count = 0
+for (y = 1901 ; y < 2000 ; y++){
+    if(y % 4 == 0 || y % 400 == 0){
+        for(m = 0 ; m < leapMonths.length ; m++){
+            for(d = 0 ; d < leapMonths[m] ; d++){
+                if(w % 7 == 0){
+                    w = 0
+                }
+                if(w==6 && d==0){
+                    console.log(`${days[w]}  ${d+1} ${months[m]} ${y} Leap year`)
+                    count++
+                }
+                w++
+            }  
+        }
+    } else if(y % 4 !== 0 || y % 100 == 0){
+        for(m = 0 ; m < normalMonths.length ; m++){
+            for(d = 0 ; d < normalMonths[m] ; d++){
+                if(w % 7 == 0){
+                    w = 0
+                }
+                if(w==6 && d==0){
+                    console.log(`${days[w]}  ${d+1} ${months[m]} ${y} normal year`)
+                    count++
+                }
+                w++
+            }  
+        }
+    }   
+}
+
+console.log(count)
