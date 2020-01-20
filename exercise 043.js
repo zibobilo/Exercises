@@ -37,16 +37,7 @@ for(a = 0 ; a < 10 ; a++){
                                                                 if(![a,b,c,d,e,f,g,h].includes(i)){
                                                                     for(j = 0 ; j < 10 ; j++){
                                                                         if(![a,b,c,d,e,f,g,h,i].includes(j)){
-                                                                            newArray.push(a)
-                                                                            newArray.push(b)
-                                                                            newArray.push(c)
-                                                                            newArray.push(d)
-                                                                            newArray.push(e)
-                                                                            newArray.push(f)
-                                                                            newArray.push(g)
-                                                                            newArray.push(h)
-                                                                            newArray.push(i)
-                                                                            newArray.push(j)
+                                                                            newArray.push(a,b,c,d,e,f,g,h,i,j)
                                                                             resultArray.push(newArray.join(''))
                                                                             newArray = [];
                                                                         }
