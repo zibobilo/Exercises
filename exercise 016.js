@@ -8,12 +8,12 @@
 
 // npm install big-integer
 
-var bigInt = require("big-integer");
-var sum = 0;
-var num = bigInt(2**1000);
+let bigInt = require("big-integer");
+let sum = 0;
+let num = bigInt(2**1000);
 
 
-for (var j = 0; j < num.toString().length; j++) {
+for (let j = 0; j < num.toString().length; j++) {
     sum += parseInt(num.toString().substr(j, 1));
 }
 
