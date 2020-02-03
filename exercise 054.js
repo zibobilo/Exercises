@@ -54,12 +54,11 @@ const game = ["Highest Card", "One Pair", "Two Pairs", "Three of a Kind", "Strai
 
 const cards = 5;
 let level = [];
-let theLevel;
 let result = [];
 let count = 0
 
 for (h = 1; h <= hands.length; h++) {
-    const play = hands[h]
+    const play = hands[h - 1]
     for (p = 0; p < 2; p++) {
 
         //Sorting the cards in order for each player "p"
@@ -76,6 +75,7 @@ for (h = 1; h <= hands.length; h++) {
                 }
             }
         })
+        
         // Let's assign "values" on each card
         const vOne = play[p][0][0];
         const vTwo = play[p][1][0];
@@ -172,19 +172,16 @@ for (h = 1; h <= hands.length; h++) {
                 level[p] = [`5, ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
             }
         }
-
         // Is there a Straight?
         for (s = 0; s <= values.length - cards; s++) {
             if (play[p][4][0] == values[s] && play[p][3][0] == values[s + 1] && play[p][2][0] == values[s + 2] && play[p][1][0] == values[s + 3] && play[p][0][0] == values[s + 4]) {
                 result[p] = [`${game[4]} of ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
                 level[p] = [`4, ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
-
                 // Is there a Straight Flush?
                 for (c = 0; c < colors.length; c++) {
                     if (play[p][4][1] == colors[c] && play[p][3][1] == colors[c] && play[p][2][1] == colors[c] && play[p][1][1] == colors[c] && play[p][0][1] == colors[c]) {
                         result[p] = [`${game[8]} of ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive} of ${colors[c]}`]
                         level[p] = [`8, ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
-
                         // Is there a Royal Flush?
                         if (vOne == values[12]) {
                             result[p] = [`${game[9]} of ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive} of ${colors[c]}`]
@@ -195,37 +192,32 @@ for (h = 1; h <= hands.length; h++) {
             }
         }
     }
-    console.log(" ")
-    console.log(`Hand #${h}`)
     
     // Determining a Winner
+    console.log(" ")
+    console.log(`Hand #${h}`)
     if (level[0][0][0] > level[1][0][0]) {
         console.log(`Player 1: ${result[0]} => ${level[0]}`)
         console.log(`Player 2: ${result[1]} => ${level[1]}`)
         console.log('Player 1 Wins!')
         count++;
-
     } else if (level[0][0][0] < level[1][0][0]) {
         console.log(`Player 1: ${result[0]} => ${level[0]}`)
         console.log(`Player 2: ${result[1]} => ${level[1]}`)
         console.log('Player 2 Wins!') 
-
     } else if (level[0][0][0] = level[1][0][0]) {
         for (i = 0; i < cards; i++) {
             if (values.indexOf(level[0][0][i + 1][0]) > values.indexOf(level[1][0][i + 1])) {
                 console.log(`Player 1: ${result[0]} => ${level[0]}`)
                 console.log(`Player 2: ${result[1]} => ${level[1]}`)
                 console.log('Player 1 Wins!')
-                console.log("hello")
                 count++;
                 break;
-
             } else if (values.indexOf(level[0][0][i + 1]) < values.indexOf(level[1][0][i + 1])) {
                 console.log(`Player 1: ${result[0]} => ${level[0]}`)
                 console.log(`Player 2: ${result[1]} => ${level[1]}`)
                 console.log('Player 2 Wins!')
                 break;
-
         } else if (i == 4) {
                 console.log('WOW !!This is a Draw!')
                 console.log(`Player 1: ${result[0]} => ${level[0]}`)
@@ -234,4 +226,6 @@ for (h = 1; h <= hands.length; h++) {
         }
     }
 }
-console.log(`the player 1 won ${count}`)
+
+console.log(" ")
+console.log(`the player 1 won ${count} times`)
