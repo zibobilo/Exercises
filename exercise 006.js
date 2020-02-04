@@ -11,17 +11,17 @@
 let numberOfItterrance = 100;
 let resultA = 0;
 
-for (let i = 1 ; i <= numberOfItterrance ; i++) {
+for (let i = 1; i <= numberOfItterrance; i++) {
     resultA += Math.pow(i, 2);
     // console.log(resultA);
 }
 
 let resultB = 0;
 
-for (let j = 1 ; j<= numberOfItterrance; j++) {
+for (let j = 1; j <= numberOfItterrance; j++) {
     resultB += j;
-    
-    if(j == numberOfItterrance){
+
+    if (j == numberOfItterrance) {
         resultB = Math.pow(resultB, 2);
         // console.log(resultB);
     }

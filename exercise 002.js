@@ -10,12 +10,12 @@ let result = 2;
 let newResult = 3;
 let sum = 2;
 
-while ( newResult < 4000000 ){
+while (newResult < 4000000) {
     newResult = pastResult + result
-    if(newResult % 2 == 0){
+    if (newResult % 2 == 0) {
         console.log(newResult)
         sum += newResult;
-    } else {}
+    } else { }
     pastResult = result;
     result = newResult;
 }

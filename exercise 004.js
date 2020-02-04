@@ -6,21 +6,21 @@
 
 let number = 1
 
-function testPalindrome(n){
-	n = n + "";
-	return n.split("").reverse().join("");
+function testPalindrome(n) {
+    n = n + "";
+    return n.split("").reverse().join("");
 }
 
 let numPalendrome = 1;
 
-for (i=1; i<1000; i++){
-    for (j=1; j<1000; j++){
-        number = i*j;
-        if (number == testPalindrome(number)){
-            if (numPalendrome < number ){
+for (let i = 1; i < 1000; i++) {
+    for (let j = 1; j < 1000; j++) {
+        number = i * j;
+        if (number == testPalindrome(number)) {
+            if (numPalendrome < number) {
                 numPalendrome = number
             }
-        } else{}
+        } else { }
     }
 }
 

@@ -6,25 +6,25 @@
 
 let primes = [];
 let count = 1;
-let stopProcess = 2000000; 
+let stopProcess = 2000000;
 let sum = 0;
 
-for(let i = 2; i < stopProcess; i++) {
+for (let i = 2; i < stopProcess; i++) {
     primes[i] = true;
 }
 
 let limit = Math.sqrt(stopProcess);
 
-for(let i = 2; i < limit; i++) {
-    for( let j = i * i; j < stopProcess; j += i) { 
+for (let i = 2; i < limit; i++) {
+    for (let j = i * i; j < stopProcess; j += i) {
         primes[j] = false;
     }
 }
 
-for(let i = 2; i < stopProcess; i++) {
-    if(primes[i] === true) {
+for (let i = 2; i < stopProcess; i++) {
+    if (primes[i] === true) {
         count += 1
         sum += i
-    } 
+    }
 }
 console.log(sum)

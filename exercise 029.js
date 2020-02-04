@@ -15,15 +15,15 @@ let result = []
 let uniqueValues = []
 let limit = 100
 
-for (a = 2 ; a <= limit ; a++){
-    for (b = 2 ; b <= limit ; b++){
+for (let a = 2; a <= limit; a++) {
+    for (let b = 2; b <= limit; b++) {
         number = Math.pow(a, b)
         result.push(number)
         number = 0
     }
 }
 
-uniqueValues = result.filter(function(item, pos) {
+uniqueValues = result.filter(function (item, pos) {
     return result.indexOf(item) == pos;
 })
 console.log(`the result is : ${uniqueValues.length}`)

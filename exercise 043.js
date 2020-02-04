@@ -18,26 +18,26 @@ let resultArray = []
 let newArray = []
 let result = 0
 
-for(a = 0 ; a < 10 ; a++){
-    for(b = 0 ; b < 10 ; b++){
-        if(![a].includes(b)){
-            for(c = 0 ; c < 10 ; c++){
-                if(![a,b].includes(c)){
-                    for(d = 0 ; d < 10 ; d++){
-                        if(![a,b,c].includes(d)){
-                            for(e = 0 ; e < 10 ; e++){
-                                if(![a,b,c,d].includes(e)){
-                                    for(f = 0 ; f < 10 ; f++){
-                                        if(![a,b,c,d,e].includes(f)){
-                                            for(g = 0 ; g < 10 ; g++){
-                                                if(![a,b,c,d,e,f].includes(g)){
-                                                    for(h = 0 ; h < 10 ; h++){
-                                                        if(![a,b,c,d,e,f,g].includes(h)){
-                                                            for(i = 0 ; i < 10 ; i++){
-                                                                if(![a,b,c,d,e,f,g,h].includes(i)){
-                                                                    for(j = 0 ; j < 10 ; j++){
-                                                                        if(![a,b,c,d,e,f,g,h,i].includes(j)){
-                                                                            newArray.push(a,b,c,d,e,f,g,h,i,j)
+for (let a = 0; a < 10; a++) {
+    for (let b = 0; b < 10; b++) {
+        if (![a].includes(b)) {
+            for (let c = 0; c < 10; c++) {
+                if (![a, b].includes(c)) {
+                    for (let d = 0; d < 10; d++) {
+                        if (![a, b, c].includes(d)) {
+                            for (let e = 0; e < 10; e++) {
+                                if (![a, b, c, d].includes(e)) {
+                                    for (let f = 0; f < 10; f++) {
+                                        if (![a, b, c, d, e].includes(f)) {
+                                            for (let g = 0; g < 10; g++) {
+                                                if (![a, b, c, d, e, f].includes(g)) {
+                                                    for (let h = 0; h < 10; h++) {
+                                                        if (![a, b, c, d, e, f, g].includes(h)) {
+                                                            for (let i = 0; i < 10; i++) {
+                                                                if (![a, b, c, d, e, f, g, h].includes(i)) {
+                                                                    for (let j = 0; j < 10; j++) {
+                                                                        if (![a, b, c, d, e, f, g, h, i].includes(j)) {
+                                                                            newArray.push(a, b, c, d, e, f, g, h, i, j)
                                                                             resultArray.push(newArray.join(''))
                                                                             newArray = [];
                                                                         }
@@ -60,15 +60,15 @@ for(a = 0 ; a < 10 ; a++){
     }
 }
 console.log(resultArray.length)
-for(i = 0 ; i < resultArray.length ; i++){
+for (let i = 0; i < resultArray.length; i++) {
 
-    if(Number(resultArray[i][1]+resultArray[i][2]+resultArray[i][3]) % 2 == 0){
-        if(Number(resultArray[i][2]+resultArray[i][3]+resultArray[i][4]) % 3 == 0){
-            if(Number(resultArray[i][3]+resultArray[i][4]+resultArray[i][5]) % 5 == 0){
-                if(Number(resultArray[i][4]+resultArray[i][5]+resultArray[i][6]) % 7 == 0){
-                    if(Number(resultArray[i][5]+resultArray[i][6]+resultArray[i][7]) % 11 == 0){
-                        if(Number(resultArray[i][6]+resultArray[i][7]+resultArray[i][8]) % 13 == 0){
-                            if(Number(resultArray[i][7]+resultArray[i][8]+resultArray[i][9]) % 17 == 0){
+    if (Number(resultArray[i][1] + resultArray[i][2] + resultArray[i][3]) % 2 == 0) {
+        if (Number(resultArray[i][2] + resultArray[i][3] + resultArray[i][4]) % 3 == 0) {
+            if (Number(resultArray[i][3] + resultArray[i][4] + resultArray[i][5]) % 5 == 0) {
+                if (Number(resultArray[i][4] + resultArray[i][5] + resultArray[i][6]) % 7 == 0) {
+                    if (Number(resultArray[i][5] + resultArray[i][6] + resultArray[i][7]) % 11 == 0) {
+                        if (Number(resultArray[i][6] + resultArray[i][7] + resultArray[i][8]) % 13 == 0) {
+                            if (Number(resultArray[i][7] + resultArray[i][8] + resultArray[i][9]) % 17 == 0) {
                                 result += Number(resultArray[i])
                             }
                         }

@@ -55,142 +55,17 @@
 
 
 
-
-
-
-
-// ----------------------------------------- Exercice 11
-
-// let sample = "08022297381500400075040507785212507791084949994017811857608717409843694804566200814931735579142993714067538830034913366552709523046011426924685601325671370236912231167151676389419236542240402866331380244732609903450244753353783684203517125032988128642367102638406759547066183864706726206802621220956394396308409166499421245558056673992697177878968314883489637221362309750076442045351400613397343133957817532822753167159403800462161409535692163905429635314755588824001754243629855786560048357189070544443744602158515417581980816805944769287392138652177704895540045208839735991607975732162626793327986688366887576220720346336746551232639353690442167338253911249472180846293240627636206936417230238834629969826759857404361620733529783190017431497148868116235705540170547183515469169233486143520189196748"
-// let numberRow = 20; let numberCol = 20; let numbersTogether = 2;
-// let suitNumbers = 4;
-
-// if(sample.length == (numberRow*numberCol*numbersTogether)){
-//     console.log("OK, Numbers match");
-//     console.log("----------");
-// }
-
-// let seriesOf = 0; let testOne = 0; let testTwo = 0; let testDiagThree = 0; let testDiagFour = 0;
-// let biggestValue = 0;
-// let testNumbers = [];
-    
-//     // numbersTogether.push(numbersTogether[j + (j+1)]);
-//     // console.log(numbersTogether)
-
-// for (let i=0; i < suitNumbers*numbersTogether ; i++ ){
-//     testNumbers.push(sample[i]);
-// }
-// console.log(testNumbers);
-
-// testNumbers.concat[0, 1];
-// console.log(testNumbers);
-
-
-// // Which one have the greatest potential?
-// if(testOne < testTwo){
-//     biggestValue = testTwo
-//     if(testTwo < testDiagThree){
-//         biggestValue = testDiagThree
-//         if(testDiagThree < testDiagFour){
-//             biggestValue = testDiagFour
-//         }
-//     }
-// } else {
-//     biggestValue = testOne
-// }
-
-
-// // Results
-// console.log("The biggest value is " + biggestValue)
-// console.log("---------results--------")
-// console.log("left-right : " + testOne)
-// console.log("up-down : " + testTwo)
-// console.log("Diagonal up-left to down-right : " + testDiagThree)
-// console.log("Diagonal down-left to up-right : " + testDiagFour)
-
-
-// ---------------------------- Exercice 16
-
-
-// let exemple = Math.pow(2, 50);
-// let output = [];
-// let result = 0;
-
-// for ( i=1 ; i<20 ; i++ ){
-//     exemple *= Math.pow(2, 50);
-//     console.log(exemple)
-// }
-
-// exemple = exemple.toString().replace("e+301", "").replace(".", "");
-// console.log(exemple.length)
-
-// for (i=0; i < exemple.length; i++){
-//     result += Number(exemple.charAt(i));
-// }
-// console.log(exemple);
-// console.log(result);
-
-
-
-// function solution(n){
-//     if(n===0){
-//         return 1
-//     }
-//     n=n-1;
-//     let arr=[2];
-//     let val;
-//     let carry=0;
-//     for (let i=1;i<=n;i++){
-//         for(let j=arr.length-1;j>=0;j--){
-//             val=arr[j]*2+carry;
-//             if(j!==0){
-//                 if(val>9){
-//                 arr[j]=val%10;
-//                     carry=1;
-//                 } else if(val<=9){
-//                     arr[j]=val;
-//                     carry=0;
-//                 }
-//             } else if(j===0){
-//                 if(val>9){
-//                 arr[0]=val%10;
-//                 arr.unshift(1);
-//                 carry=0;
-//                 } else{
-//                 arr[0]=val;
-//                 carry=0;
-//                 }
-//             }
-//         }
-//     }
-// return arr.reduce((a,v)=>a+v,0)
-// }
-
-// console.log(solution(1000))
-// const BigNumber = require('bignumber.js');
-// var sum = 0;
-// console.log(BigNumber);
-// var num = isBigNumber(2**1000);
-
-
-// for (var j = 0; j < num.toString().length; j++) {
-//     sum += parseInt(num.toString().substr(j, 1));
-// }
-
-// console.log(sum);
-
-
 // ------------------------------- Amazon interview
 
 // function cellCompete(states, days){
 //     let leftCell = 0;
 //     let rightCell = 0;
     
-//     for (j=1; j<=days; j++){
+//     for (let j=1; j<=days; j++){
 
 //         let result = [];       
 
-//         for (i=0; i<8; i++){
+//         for (let i=0; i<8; i++){
 //             leftCell = (states[i-1]);
 //             rightCell = (states[i+1]);
 
@@ -832,20 +707,20 @@
 
 // --------------------------------------------Exercice 20
 
-// let number = 1n
-// let sum = 0n
+let number = 1n
+let sum = 0n
 
-// for (i=0;i<100;i++){
-//   number *= BigInt(i + 1);
-// }
+for (i=0;i<100;i++){
+  number *= BigInt(i + 1);
+}
 
-// console.log(number)
-// number = number.toString()
+console.log(number)
+number = number.toString()
 
-// for(i=0 ; i<number.length ; i++){
-//   sum += BigInt(Number(number[i]))
-// }
-// console.log("Hello the sum is : " + sum)
+for(i=0 ; i<number.length ; i++){
+  sum += BigInt(Number(number[i]))
+}
+console.log("Hello the sum is : " + sum)
 
 // ---------------------------------------------- Exercice 31
 
@@ -966,46 +841,3 @@
 // }
 // lengthOfLongestSubstring("dvdf")
 
-// exercise 19
-//How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
-// A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
-
-
-let leapMonths = [31,29,31,30,31,30,31,31,30,31,30,31]
-let normalMonths = [31,28,31,30,31,30,31,31,30,31,30,31]
-let months = ["Janvier", "Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre"]
-let days = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"]
-let rest = 0
-let w = 0
-let count = 0
-for (y = 1901 ; y < 2000 ; y++){
-    if(y % 4 == 0 || y % 400 == 0){
-        for(m = 0 ; m < leapMonths.length ; m++){
-            for(d = 0 ; d < leapMonths[m] ; d++){
-                if(w % 7 == 0){
-                    w = 0
-                }
-                if(w==6 && d==0){
-                    console.log(`${days[w]}  ${d+1} ${months[m]} ${y} Leap year`)
-                    count++
-                }
-                w++
-            }  
-        }
-    } else if(y % 4 !== 0 || y % 100 == 0){
-        for(m = 0 ; m < normalMonths.length ; m++){
-            for(d = 0 ; d < normalMonths[m] ; d++){
-                if(w % 7 == 0){
-                    w = 0
-                }
-                if(w==6 && d==0){
-                    console.log(`${days[w]}  ${d+1} ${months[m]} ${y} normal year`)
-                    count++
-                }
-                w++
-            }  
-        }
-    }   
-}
-
-console.log(count)

@@ -32,13 +32,13 @@ let maxResult = 0;
 let potentialMaxNum = 0;
 let winnerNums = 0;
 
-for (let i = 0; i <= (numbersInSample - adjacentNumbers); i++){
+for (let i = 0; i <= (numbersInSample - adjacentNumbers); i++) {
     let seriesOfNum = [];
-    for (let k = 0; k <= adjacentNumbers; k++ ){
+    for (let k = 0; k <= adjacentNumbers; k++) {
         seriesOfNum.push(sampleNumbers[i + k]);
-        if (seriesOfNum.length == adjacentNumbers){
-            potentialMaxNum = seriesOfNum.reduce( (a,b) => a * b );
-            if (maxResult < potentialMaxNum){
+        if (seriesOfNum.length == adjacentNumbers) {
+            potentialMaxNum = seriesOfNum.reduce((a, b) => a * b);
+            if (maxResult < potentialMaxNum) {
                 winnerNums = seriesOfNum;
                 maxResult = potentialMaxNum;
             }

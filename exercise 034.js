@@ -10,16 +10,16 @@ limit = 50000
 testNum = 1
 testTotal = 0
 interestingNums = []
-for (i = 3 ; i < limit ; i++){
-    for (j = 0; j < String(i).length ; j++){
-        for (k = 2 ; k <= String(i)[j] ; k++){
+for (let i = 3; i < limit; i++) {
+    for (let j = 0; j < String(i).length; j++) {
+        for (let k = 2; k <= String(i)[j]; k++) {
             testNum *= k
         }
         testTotal += testNum
         testNum = 1
     }
-    if (testTotal == i){
-        interestingNums.push(testTotal)  
+    if (testTotal == i) {
+        interestingNums.push(testTotal)
     }
     testTotal = 0
 }
