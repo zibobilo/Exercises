@@ -57,15 +57,15 @@ let level = [];
 let result = [];
 let count = 0
 
-for (h = 1; h <= hands.length; h++) {
+for (let h = 1; h <= hands.length; h++) {
     const play = hands[h - 1]
-    for (p = 0; p < 2; p++) {
+    for (let p = 0; p < 2; p++) {
 
         //Sorting the cards in order for each player "p"
         play[p].sort((a, b) => {
-            for (i = 0; i < values.length; i++) {
+            for (let i = 0; i < values.length; i++) {
                 if (a[0] == values[i]) {
-                    for (j = 0; j < values.length; j++) {
+                    for (let j = 0; j < values.length; j++) {
                         if (b[0] == values[j]) {
                             if (i > j) { return -1 }
                             if (j > i) { return 1 }
@@ -165,7 +165,7 @@ for (h = 1; h <= hands.length; h++) {
             level[p] = [`1, ${vFour}, ${vFive}, ${vOne}, ${vTwo}, ${vThree}`]
         }
         //  Is there a flush?
-        for (c = 0; c < colors.length; c++) {
+        for (let c = 0; c < colors.length; c++) {
             if (play[p][4][1] == colors[c] && play[p][3][1] == colors[c] && play[p][2][1] == colors[c] && play[p][1][1] == colors[c] && play[p][0][1] == colors[c]) {
                 // C-C-C-C-C
                 result[p] = [`${game[5]} of ${colors[c]}`]
@@ -173,12 +173,12 @@ for (h = 1; h <= hands.length; h++) {
             }
         }
         // Is there a Straight?
-        for (s = 0; s <= values.length - cards; s++) {
+        for (let s = 0; s <= values.length - cards; s++) {
             if (play[p][4][0] == values[s] && play[p][3][0] == values[s + 1] && play[p][2][0] == values[s + 2] && play[p][1][0] == values[s + 3] && play[p][0][0] == values[s + 4]) {
                 result[p] = [`${game[4]} of ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
                 level[p] = [`4, ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
                 // Is there a Straight Flush?
-                for (c = 0; c < colors.length; c++) {
+                for (let c = 0; c < colors.length; c++) {
                     if (play[p][4][1] == colors[c] && play[p][3][1] == colors[c] && play[p][2][1] == colors[c] && play[p][1][1] == colors[c] && play[p][0][1] == colors[c]) {
                         result[p] = [`${game[8]} of ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive} of ${colors[c]}`]
                         level[p] = [`8, ${vOne}, ${vTwo}, ${vThree}, ${vFour}, ${vFive}`]
@@ -206,7 +206,7 @@ for (h = 1; h <= hands.length; h++) {
         console.log(`Player 2: ${result[1]} => ${level[1]}`)
         console.log('Player 2 Wins!') 
     } else if (level[0][0][0] = level[1][0][0]) {
-        for (i = 0; i < cards; i++) {
+        for (let i = 0; i < cards; i++) {
             if (values.indexOf(level[0][0][i + 1][0]) > values.indexOf(level[1][0][i + 1])) {
                 console.log(`Player 1: ${result[0]} => ${level[0]}`)
                 console.log(`Player 2: ${result[1]} => ${level[1]}`)
