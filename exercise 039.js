@@ -76,7 +76,7 @@ let number = ""
 
 for (let i = 1; i <= 150; i++) {
     number += math.pow(i, i);
-    number += math.evaluate('bigint(4349) + bigint(5249)'))
+    number += math.evaluate('bigint(4349) + bigint(5249)')
 }
 
 console.log(math.evaluate(number))
