@@ -1,82 +1,34 @@
-// // exercise 39
-// math.config({precision: 2000});
+// Problem 39
+// https://projecteuler.net/problem=39
+// If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+// {20,48,52}, {24,45,51}, {30,40,50}
+// For which value of p ≤ 1000, is the number of solutions maximised?
 
 
+// a2+b2 = c2   => Thanks Pythagore
 
-// // configure math.js to work with enough precision to do our calculation
-// math.config({precision: 2000});
+let limit = 1001
+let periCount = []
+let maxCount = 0
 
-// // evaluate the factorial using a bignumber value
-// var value = math.bignumber(500);
-// var result = math.factorial(value);
-
-// // output the results
-// console.log(math.format(result, {notation: 'fixed'}));
-
-// const { sqrt, config } = require('mathjs')
-
-// config = {
-//     epsilon: 1e-12,
-//     matrix: 'Matrix',
-//     number: 'number',
-//     precision: 64,
-//     predictable: false,
-//     randomSeed: null
-//   }
-
-// console.log(sqrt(10).toString()) // 2i
-
-// This example demonstrates how you could integrate support for BigInt
-// in mathjs. It's just a proof of concept, for full support you will
-// have to defined more functions and define conversions from and to
-// other data types.
-
-const { create, all, factory } = require('mathjs')
-const math = create(all)
-
-// we can also add conversions here from number or string to BigInt
-// and vice versa using math.typed.addConversion(...)
-
-// math.import([
-//   factory('BigInt', ['typed'], function createBigInt ({ typed }) {
-//     typed.addType({
-//       name: 'BigInt',
-//       test: (x) => typeof x === 'bigint' // eslint-disable-line
-//     })
-
-//     return BigInt // eslint-disable-line
-//   }, { lazy: false }),
-
-//   factory('bigint', ['typed', 'BigInt'], function createBigint ({ typed, BigInt }) {
-//     return typed('bigint', {
-//       'number | string ': (x) => BigInt(x) // eslint-disable-line
-//     })
-//   }),
-
-//   factory('add', ['typed'], function createBigIntAdd ({ typed }) {
-//     return typed('add', {
-//       'BigInt, BigInt': (a, b) => a + b
-//     })
-//   }),
-
-//   factory('pow', ['typed'], function createBigIntPow ({ typed }) {
-//     return typed('pow', {
-//       'BigInt, BigInt': (a, b) => a ** b
-//     })
-//   })
-// ])
-
-console.log(math.evaluate('4349 + 5249'))
-// console.log(math.evaluate('bigint(4349) + bigint(5249)'))
-// console.log(math.evaluate('bigint(4349) ^ bigint(5249)'))
-
-
-
-let number = ""
-
-for (let i = 1; i <= 150; i++) {
-    number += math.pow(i, i);
-    number += math.evaluate('bigint(4349) + bigint(5249)')
+for (i = 0; i < 1001; i++) {
+    for (let a = 1; a < limit; a++) {
+        for (let b = 1; b < limit - a; b++) {
+            for (let c = 1; c < limit - a - b; c++) {
+                if ((a * a) + (b * b) == (c * c)) {
+                    if (a+b+c == i) {
+                        periCount.push(`{${a},${b},${c}} permimeter = ${a + b + c}`)
+                        if (periCount.length > maxCount) {
+                            maxCount = periCount.length
+                            console.log(periCount.length)
+                            console.log(periCount)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    periCount = []
 }
 
-console.log(math.evaluate(number))
+// This method takes 70 seconds to run, it can be faster by adding all perimeters - that match pythagore theorem - to an array and return the highest number of duplicates (to do)
