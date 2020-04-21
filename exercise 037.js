@@ -32,9 +32,6 @@ function truncPrimes() {
     // Must be equal to 11 to stop the function
     let totalNums = 0
 
-    // lets push the selected numbers in an Array
-    let arrTotalNums = []
-
     // Addition of all total numbers
     let sumOfTotal = 0
 
