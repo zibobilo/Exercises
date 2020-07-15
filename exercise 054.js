@@ -205,7 +205,7 @@ for (let h = 1; h <= hands.length; h++) {
         console.log(`Player 1: ${result[0]} => ${level[0]}`)
         console.log(`Player 2: ${result[1]} => ${level[1]}`)
         console.log('Player 2 Wins!') 
-    } else if (level[0][0][0] = level[1][0][0]) {
+    } else if (level[0][0][0] == level[1][0][0]) {
         for (let i = 0; i < cards; i++) {
             if (values.indexOf(level[0][0][i + 1][0]) > values.indexOf(level[1][0][i + 1])) {
                 console.log(`Player 1: ${result[0]} => ${level[0]}`)
