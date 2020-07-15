@@ -15,7 +15,7 @@ while (newResult < 4000000) {
     if (newResult % 2 == 0) {
         console.log(newResult)
         sum += newResult;
-    } else { }
+    } 
     pastResult = result;
     result = newResult;
 }

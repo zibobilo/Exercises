@@ -6,7 +6,7 @@
 
 let primes = [];
 let count = 1;
-let stopProcess = 2000000;
+let stopProcess = 1000000;
 let sum = 0;
 
 for (let i = 2; i < stopProcess; i++) {
@@ -28,3 +28,28 @@ for (let i = 2; i < stopProcess; i++) {
     }
 }
 console.log(sum)
+
+
+     // let primes = [2n]
+// function getNextPrime() {
+        //     for (let i = lastPrime + 1n; i <= n; i++) {
+        //         for (let j = 0; j < primes.length; j++) {
+        //             if (i % primes[j] === 0n) break
+        //             if (j === primes.length - 1) {
+        //                 primes.push(i)
+        //                 lastPrime = i
+        //                 return
+        //             }
+        //         }
+        //     }
+        // }
+        // let lastPrime = primes[primes.length-1]
+        // while(lastPrime < n) {
+            
+        //     if (n % lastPrime === 0n) {
+        //         n = n/lastPrime
+        //     }
+        //     getNextPrime()
+        // }
+        // console.log(String(lastPrime).slice(0, lastPrime.length))
+    }
