@@ -52,4 +52,5 @@ console.log(sum)
         //     getNextPrime()
         // }
         // console.log(String(lastPrime).slice(0, lastPrime.length))
-    }
+    // }
+    
