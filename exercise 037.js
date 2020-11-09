@@ -6,62 +6,53 @@
 // Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
 // NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
-
-function isPrime(number) {
-    if (number == 1) {
+function isPrime(number) { 
+    if (number === 1) {
         return false
-    } else if (number == 2) {
+    } else if (number === 2) {
         return true
+    } else if (number % 2 === 0) {
+        return false
     }
-    for (let j = 2; j < number; j++) {
+    for (let j = 3; j <= Math.sqrt(number); j+=2) {
         if (number % j !== 0) { }
         else { return false }
     }
     return true
 }
 
-
 function truncPrimes() {
-
-    // technically unlimited iterations until the 11 prime numbers are found
-    let limit = 10000000
-
-    // counting how many times the truncation went successful
-    let count = 0
-
-    // Must be equal to 11 to stop the function
-    let totalNums = 0
-
-    // Addition of all total numbers
-    let sumOfTotal = 0
-
-    for (let i = 10; i < limit; i++) {
-
-        // The truncated number has to be a prime
+    let start = performance.now()
+    let primeArr = [2, 3, 5, 7]
+        
+    for (let i = 11; i < 1000000; i+=2) {
         if (isPrime(i)) {
-            count = 0
-
-            // Lets count how many times we need to truncate the number
-            for (let t = 1; t < String(i).length; t++) {
-
-                // Checking for each length of truncation whether each truncated sides are primes
-                if (isPrime(Number(String(i).slice(0, t))) &&
-                    isPrime(Number(String(i).slice(t, String(i).length + 1)))) {
-                    count++
-                }
-            }
-
-            if (count == String(i).length - 1) {
-                console.log(`We have a winner : ${i}`)
-                totalNums++
-                sumOfTotal += i
-            }
-        }
-        if (totalNums == 11) {
-            break
+            primeArr.push(i)
         }
     }
-    console.log(`we have ${totalNums} numbers for a sum of ${sumOfTotal}`)
+
+    let count = 0
+    
+    // Addition of all total numbers
+    let sumOfTotal = 0
+    
+    for (let i = 4; i < primeArr.length; i++) {
+        
+        // Lets count how many times we need to truncate the number
+        for (let t = 1; t < String(primeArr[i]).length; t++) {
+            
+            // Checking for each length of truncation whether each truncated sides are primes
+            if (isPrime(Number(String(primeArr[i]).slice(0, t))) &&
+                isPrime(Number(String(primeArr[i]).slice(t, String(primeArr[i]).length+1)))) {
+                count++ 
+            }
+        } 
+        if (count == String(primeArr[i]).length-1) {
+            sumOfTotal += primeArr[i]
+        }
+        count = 0
+    }
+    console.log(`sum is ${sumOfTotal} accomplished in ${(performance.now()-start).toFixed(0)}ms`)
 }
 
 truncPrimes()
