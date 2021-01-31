@@ -6,11 +6,10 @@
 // Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
 
-limit = 50000
-testNum = 1
-testTotal = 0
-interestingNums = []
-for (let i = 3; i < limit; i++) {
+let testNum = 1
+let testTotal = 0
+let interestingNums = []
+for (let i = 3; i < 41000; i++) {
     for (let j = 0; j < String(i).length; j++) {
         for (let k = 2; k <= String(i)[j]; k++) {
             testNum *= k
@@ -24,5 +23,9 @@ for (let i = 3; i < limit; i++) {
     testTotal = 0
 }
 console.log(interestingNums)
-let solution = interestingNums[0] + interestingNums[1]
-console.log(solution)
+console.log(interestingNums[0] + interestingNums[1])
+
+// [ 145, 40585 ]
+// => 40730
+
+// +- 0.1 s

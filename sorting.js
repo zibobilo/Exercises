@@ -13,10 +13,8 @@ function sortingMethod (array) {
     for (let b = a + 1; b < array.length; b++) {
 
       // I split each string - on the space caracter - in smaller substrings
-      let arrayA = sortedArray[a].split(" ")
-      let wordsA = ""
-      let arrayB = sortedArray[b].split(" ")
-      let wordsB = "" 
+      let arrayA = sortedArray[a].split(" "), wordsA = ""
+      let arrayB = sortedArray[b].split(" "), wordsB = "" 
 
       // for each substring i want to see if it contains numbers
       for (let i = 0; i < arrayA.length; i++) {
@@ -42,9 +40,7 @@ function sortingMethod (array) {
         // if the words are the same, sort the strings
         if(wordsA === wordsB) {
           if (sortedArray[a] > sortedArray[b]) swap(a, b)
-        }
-        if (wordsA > wordsB) swap(a, b)
-
+        } else if (wordsA > wordsB) swap(a, b)
       }
     }
   }

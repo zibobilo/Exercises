@@ -50,47 +50,46 @@ const sample =
     [20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54],
     [01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48]]
 
-let testLeftRight = 0;
-let testUpDown = 0;
-let testDiagTopLeftToBottomRight = 0;
-let testDiagTopRightToBottomLeft = 0;
-let biggestNum = 0;
-let where = "";
-
-
-for (let i = 0; i < 20 - 3; i++) {
-    for (let j = 0; j < 20; j++) {
-
-        // test up-down, left-right
+    let testLeftRight = 0;
+    let testUpDown = 0;
+    let testDiagTopLeftToBottomRight = 0;
+    let testDiagTopRightToBottomLeft = 0;
+    let biggestNum = 0;
+  
+    // Vertical Check
+    for (let i = 0; i < 20-3; i++) {
+      for (let j = 0; j < 20; j++) {
         testUpDown = sample[i][j] * sample[i + 1][j] * sample[i + 2][j] * sample[i + 3][j];
-        testLeftRight = sample[i][j] * sample[i][j + 1] * sample[i][j + 2] * sample[i][j + 3];
-
         if (testUpDown > biggestNum) {
             biggestNum = testUpDown
-            where = `Up-Down from line ${i} to ${i + 3} & column ${j}   //   ${sample[i][j]} * ${sample[i + 1][j]} * ${sample[i + 2][j]} * ${sample[i + 3][j]}`
-            console.log(biggestNum + "  " + where)
         }
+      }
+    }
+
+    // Horizontal Check
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 20-3; j++) {
+        testLeftRight = sample[i][j] * sample[i][j + 1] * sample[i][j + 2] * sample[i][j + 3];
         if (testLeftRight > biggestNum) {
             biggestNum = testLeftRight
-            where = `From Left to Right // line ${i} & column ${j} to ${j + 3}  //   ${sample[i][j]} * ${sample[i][j + 1]} * ${sample[i][j + 2]} * ${sample[i][j + 3]}`
-            console.log(biggestNum + "  " + where)
         }
-
-        // test Diagonals
-        if (j < (20 - 3)) {
-            testDiagTopLeftToBottomRight = sample[i][j] * sample[i + 1][j + 1] * sample[i + 2][j + 2] * sample[i + 3][j + 3];
-            testDiagTopRightToBottomLeft = sample[i][j + 3] * sample[i + 1][j + 2] * sample[i + 2][j + 1] * sample[i + 3][j];
-
-            if (testDiagTopLeftToBottomRight > biggestNum) {
-                biggestNum = testDiagTopLeftToBottomRight
-                where = `Top-Left to Bottom-Right from line ${i}/${i+3} & column ${j}/${j + 3}  //   ${sample[i][j]} * ${sample[i + 1][j + 1]} * ${sample[i + 2][j + 2]} * ${sample[i + 3][j + 3]}`
-                console.log(biggestNum + "  " + where)
-            }
-            if (testDiagTopRightToBottomLeft > biggestNum) {
-                biggestNum = testDiagTopRightToBottomLeft
-                where = `Top-Right to Bottom-Left from line ${i}/${i+3} & column ${j}/${j + 3}  //   ${sample[i][j+3]} * ${sample[i + 1][j + 2]} * ${sample[i + 2][j + 1]} * ${sample[i + 3][j]}`
-                console.log(biggestNum + "  " + where)
-            }
-        }
+      }
     }
-}
+  
+    // Diagonal Check
+    for (let i = 0; i < 20-3; i++) {
+      for (let j = 0; j < 20-3; j++) {
+        if (j < (20 - 3)) {
+          testDiagTopLeftToBottomRight = sample[i][j] * sample[i + 1][j + 1] * sample[i + 2][j + 2] * sample[i + 3][j + 3];
+          testDiagTopRightToBottomLeft = sample[i][j + 3] * sample[i + 1][j + 2] * sample[i + 2][j + 1] * sample[i + 3][j];
+  
+          if (testDiagTopLeftToBottomRight > biggestNum) {
+              biggestNum = testDiagTopLeftToBottomRight
+          }
+          if (testDiagTopRightToBottomLeft > biggestNum) {
+              biggestNum = testDiagTopRightToBottomLeft
+          }
+        }
+      }
+    }
+    console.log(biggestNum)

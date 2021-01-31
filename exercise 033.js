@@ -30,4 +30,9 @@ for (let den = 10; den < 100; den++) {
 }
 
 console.log(nonTrivial)
-console.log(prodNum / prodDen)
+console.log(prodDen / prodNum)
+
+// [ '16/64 = 1/4', '26/65 = 2/5', '19/95 = 1/5', '49/98 = 4/8' ]
+// => 100
+
+// +- 0.07 s

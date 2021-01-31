@@ -5,16 +5,26 @@
 // What is the sum of the digits of the number 21000?
 
 
-
-// npm install big-integer
-
-let bigInt = require("big-integer");
-let sum = 0;
-let num = bigInt(2**1000);
+// let sum = 0;
+// let num = BigInt(2**1000);
 
 
-for (let j = 0; j < num.toString().length; j++) {
-    sum += parseInt(num.toString().substr(j, 1));
-}
+// for (let j = 0; j < num.toString().length; j++) {
+//     sum += parseInt(num.toString().substr(j, 1));
+// }
 
-console.log(sum);
+// console.log(sum);
+
+
+function processData(input) {
+    input = input.split("\n").map(inp => Number(inp))
+
+    for (let i = 1; i < input.length; i++) {
+     
+      let num = 2n**BigInt(input[i]);
+      let sum = String(num).split("").reduce((a,b) => Number(a) + Number(b))
+      console.log(sum);
+    }
+} 
+
+processData("3\n654\n9998")

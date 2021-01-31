@@ -144,36 +144,7 @@
 
 
 
-// ----------------------------------------- problem 15
 
-// let arrayOfNumbers = []
-
-// function pathfinder(cols, rows){
-//     for(column = 0; column <= (cols) ; column++){
-//         for(row = 0; row <= (rows); row++){
-
-//             if (column == 0 && row == 0){
-//                 arrayOfNumbers.push(0)
-//                 // console.log(arrayOfNumbers)
-                
-//             } else if (column == 0 || row == 0){
-//                 arrayOfNumbers.push(1)
-//                 // console.log(arrayOfNumbers)
-
-//             } else if (column == 1 || row == 1){
-//                 arrayOfNumbers.push(column*row + 1)
-//                 // console.log(arrayOfNumbers)
-
-//             } else {
-//                 arrayOfNumbers.push(arrayOfNumbers[arrayOfNumbers.length - 1] + arrayOfNumbers[arrayOfNumbers.length - rows - 1])
-//                 // console.log(arrayOfNumbers)
-//             }
-//         }
-//     }
-//     return arrayOfNumbers[arrayOfNumbers.length - 1]
-// }
-
-// console.log(pathfinder(20,20))
 
 
 

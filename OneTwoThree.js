@@ -1,5 +1,7 @@
 // One, Two, Three
 // Using all of the digits from 1 to 9 once each, create three 3-digit numbers that are in a ratio of 1:2:3. There are four solutions.
+
+// brute force approach 
 let numbers = []
 for (let a = 1; a < 10; a++) {
     for (let b = 1; b < 10; b++) {
@@ -43,3 +45,4 @@ for (let a = 1; a < 10; a++) {
 console.log(numbers)
 
 //  [ '192:384:576', '219:438:657', '273:546:819', '327:654:981' ]
+// +- 0.4 s

@@ -60,22 +60,12 @@ let count = 0
 for (let h = 1; h <= hands.length; h++) {
     const play = hands[h - 1]
     for (let p = 0; p < 2; p++) {
-
         //Sorting the cards in order for each player "p"
         play[p].sort((a, b) => {
-            for (let i = 0; i < values.length; i++) {
-                if (a[0] == values[i]) {
-                    for (let j = 0; j < values.length; j++) {
-                        if (b[0] == values[j]) {
-                            if (i > j) { return -1 }
-                            if (j > i) { return 1 }
-                            else { return 0 }
-                        }
-                    }
-                }
-            }
+            if(values.indexOf(a[0]) < values.indexOf(b[0])) return 1
+            else if (values.indexOf(a[0]) > values.indexOf(b[0])) return -1
         })
-        
+        // console.log(play)
         // Let's assign "values" on each card
         const vOne = play[p][0][0];
         const vTwo = play[p][1][0];

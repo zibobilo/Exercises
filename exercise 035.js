@@ -6,26 +6,15 @@
 // How many circular primes are there below one million?
 
 
-let limit = 1000000;
-let answer = 0;
-let results = [];
-let primes = [];
+let limit = 1000000
+let answer = 0
 
 function isPrime(number) {
-    if (number == 0 || number == 1) {
-        return false
-    }
-    if (number == 2) {
-        return true
-    }
-
-    if (number % 2 == 0) {
-        return false
-    }
-
-    for (let i = 3; i < number; i += 2) {
-        if (number % i != 0) { }
-        else { return false }
+    if (number == 0 || number == 1) return false
+    else if (number == 2) return true
+    else if (number % 2 == 0) return false
+    for (let i = 3; i <= Math.floor(Math.sqrt(number)); i += 2) {
+        if (!(number % i)) return false
     }
     return true
 }
@@ -47,12 +36,13 @@ for (let i = 0; i < limit; i++) {
             } else { testCount = 0; break; }
         }
         if (testCount == Number(String(i).length) - 1 || Number(String(i).length) == 1) {
-            answer ++
+            answer++
             testCount = 0
         }
     }
 }
 
-// needs improvement on execution time ~66s
 console.log(answer)
 
+// => 55
+// => +-0.3s

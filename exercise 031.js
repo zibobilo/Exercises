@@ -7,8 +7,7 @@
 // How many different ways can £2 be made using any number of coins?
 
 let limit = 200
-let total = 0
-let times = 0
+
 let acent = 1
 let bcent = 2
 let ccent = 5
@@ -16,50 +15,46 @@ let dcent = 10
 let ecent = 20
 let fcent = 50
 let gcent = 100
-let hcent = 200
 
-// count = 8 because all coins on their own can get to 2 pounds 1*200, 2*100,...2*1
-let count = 8
+// starts at 1 => it corresponds to the 2 pounds coin which consists of only one possibility
+let ways = 1
 
-let possibility = []
+// a represent the number of one cent coin
+// b represent the number of two cent coin
+// ...
 
-let possibilities = []
+// For each loop, if the rolling amount surpasses the 200 cents limit no need to go further.
 
-// possibility.push(`${times}x${a} + ${times}x${b} + ${times}x${c} + ${times}x${d} + ${times}x${e}`)
-// possibilities.push(`2x${b}`)
-// possibilities.push(`2x`)
-// console.log(possibilities)
+for (let a = 0; a <= limit; a++) {
+  for (let b = 0; b <= limit; b++) {
+    if (a * acent + b * bcent > limit) break;
 
-for (a = 0 ; a < 200 ; a++ ){
-    for (b = 0 ; b < 100 ; b++ ){
-        for (c = 0 ; c < 40 ; c++ ){
-            for (d = 0 ; d < 20 ; d++ ){
-                for (e = 0 ; e < 10 ; e++ ){
-                    for (f = 0 ; f < 4 ; f++ ){
-                        for (g = 0 ; g < 2 ; g++ ){
-                            total = a*acent + b*bcent + c*ccent + d*dcent + e*ecent + f*fcent + g*gcent
-                            if (total == 200){
-                                count+=1
-                                // possibility.push(`${a}*${acent} `)
-                                // possibility.push(`${b}*${bcent} `)
-                                // possibility.push(`${c}*${ccent} `)
-                                // possibility.push(`${d}*${dcent} `)
-                                // possibility.push(`${e}*${ecent} `)
-                                // possibility.push(`${f}*${fcent} `)
-                                // possibility.push(`${g}*${gcent} `)
-                                // possibilities.push(possibility.join(''))
-                                // possibility = []
-                                total = 0
-                            }
-                        }
-                    }
-                }
+    for (let c = 0; c <= limit; c++) {
+      if (a * acent + b * bcent + c * ccent > limit) break;
+
+      for (let d = 0; d <= limit; d++) {
+        if (a * acent + b * bcent + c * ccent + d * dcent > limit) break;
+
+        for (let e = 0; e <= limit; e++) {
+          if (a * acent + b * bcent + c * ccent + d * dcent + e * ecent > limit) break;
+
+          for (let f = 0; f <= limit; f++) {
+            if (a * acent + b * bcent + c * ccent + d * dcent + e * ecent + f * fcent > limit) break;
+
+            for (let g = 0; g <= limit; g++) {
+              if (a * acent + b * bcent + c * ccent + d * dcent + e * ecent + f * fcent + g * gcent > limit) break;
+
+              if (a * acent + b * bcent + c * ccent + d * dcent + e * ecent + f * fcent + g * gcent === limit) {
+                ways++                
+              }
             }
+          }
         }
+      }
     }
+  }
 }
 
-// console.log(possibilities)
-// console.log(possibilities.length)
-
-console.log(count)
+console.log(ways)
+// => 73682
+// => +-0.1 s

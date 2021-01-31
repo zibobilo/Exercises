@@ -4,7 +4,7 @@
 // Find the sum of all the primes below two million.
 
 let sum = 2
-// Itarate through each number from 3 to below 2 million
+// Iterate through each number from 3 to below 2 million
 for (let i = 3; i < 2000000; i += 2) {
     if (isPrime(i)) sum += i
 }

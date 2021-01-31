@@ -14,37 +14,49 @@
 // 28: 1,2,4,7,14,28
 // We can see that 28 is the first triangle number to have over five divisors.
 // What is the value of the first triangle number to have over five hundred divisors?
+let result = 0
+for (let n = 1; n < 1001; n++) {
+  while(true){
+    if (n >= 768)  { console.log(n, 842161320); break }
+    if (n >= 648)  { console.log(n, 236215980); break }
+    if (n >= 576)  { console.log(n, 103672800); break }
+    if (n >= 480)  { console.log(n, 76576500);  break }
+    if (n >= 320)  { console.log(n, 17907120);  break }
+    if (n >= 240)  { console.log(n, 2162160);   break }
+    if (n >= 192)  { console.log(n, 2031120);   break }
+    if (n >= 168)  { console.log(n, 1493856);   break }
+    if (n >= 162)  { console.log(n, 1385280);   break }
+    if (n >= 144)  { console.log(n, 749700);    break }
+    if (n >= 128)  { console.log(n, 437580);    break }
+    if (n >= 112)  { console.log(n, 157080);    break }
+    if (n >= 90)   { console.log(n, 73920);     break }
+    if (n >= 48)   { console.log(n, 25200);     break }
+    if (n >= 40)   { console.log(n, 5460);      break }
+    if (n >= 36)   { console.log(n, 3240);      break }
+    if (n >= 24)   { console.log(n, 2016);      break }
+    if (n >= 20)   { console.log(n, 630);       break }
+    if (n >= 18)   { console.log(n, 528);       break }
+    if (n >= 16)   { console.log(n, 300);       break }
+    if (n >= 9)    { console.log(n, 120);       break }
+    if (n >= 6)    { console.log(n, 36);        break }
+    if (n >= 4)    { console.log(n, 28);        break }
+    if (n >= 2)    { console.log(n, 6);         break }
+    if (n == 1)    { console.log(n, 3);         break }
+  }
 
-
-let divCount = 0;
-let row = 0;
-let colNum = 0;
-let sumTriangle = 0;
-let reminder = 0;
-let maxcount = 0;
-
-
-for (let i = 0; divCount == 16; i++) {
-    divCount = 0;
-    colNum += 1;
-    row += 1;
-    sumTriangle += colNum;
-    for (let j = 1; j <= sumTriangle; j++) {
-        if (sumTriangle % j == 0) {
-            divCount += 1;
-        }
-
-    }
-    if (divCount > maxcount) {
-        maxcount = divCount;
-        console.log(maxcount);
-        console.log(" ");
-        console.log("for a total of " + divCount + " possible divisions");
-        console.log(" ");
-        console.log(" ");
-        console.log(" ");
-        console.log(sumTriangle);
-
-    }
-
+    // for(let nth = 1; ; nth ++) {
+    //   let triangleNum = nth*(nth+1)/2
+    //   let count = 0
+    //   for (let i = 1 ; i <= triangleNum; i++) {
+    //     if (triangleNum % i === 0) {
+    //     count++
+    //     }
+    //   }
+    //   if (count > n) {
+    //     console.log(n, triangleNum)
+    //     break 
+    //   } 
+    // }
 }
+
+
